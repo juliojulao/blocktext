@@ -1,3 +1,6 @@
+# String designs of alphabet and extended ascii characters
+# to convert normal ascii characters
+
 blocks = {
     '#': '█',
 
@@ -158,15 +161,13 @@ def letterToBlocks(c):
     """Returns block style of input letter."""
     result = ""
     for i in range(3):
-        # result = charToBlock("____") + result
         for ind, j in enumerate(c):
             if ind == 0:
                 part = charToBlock("____") + charToBlock(letters[j][i]) + charToBlock('_')
             else:
                 part = charToBlock(letters[j][i]) + charToBlock('_')
-            result = result + part #+ charToBlock(letters[j][i]) + charToBlock('_')
+            result = result + part
         result = result + charToBlock("___") + '\n'
-        # result = charToBlock("____") + result
     result = '\n' + result
     for i in c:
         spaces = "_" * (len(letters[i][0]) + 1)
